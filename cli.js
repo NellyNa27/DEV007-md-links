@@ -1,12 +1,5 @@
-// const { mdLinks } =require( 'mdLinks' );
-// mdLinks('./laRutaNOEXISTE/').then(()=>{})
-// .catch((error))
+import { mdLinks } from "./index.js";
 
-
-
-
-
-//CLI
 mdLinks("README.md")
   .then((rutaAbsoluta) => {
     console.log(rutaAbsoluta);
@@ -15,4 +8,4 @@ mdLinks("README.md")
     console.error("Error:", error);
   });
 
-export default mdLinks;
+

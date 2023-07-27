@@ -15,27 +15,33 @@ import { pathIsAbsolute } from "./functions.js";
 
 //----------agregamos rutas--------------
 //SABER SI UN ARCHIVO EXISTE EN NODE.JS (Módulo FS por ejemplo)
-const mdLinks = (ruta, options) => {
+
+export const mdLinks = (ruta, options) => {
   return new Promise((resolve, reject) => {
+    let userPath;
     //resolve (son callback, son funciones): es cuando se resuelve la promesa-then, reject: es rechazada la promesa-catch
     // Identifica si la ruta existe.
     if (fs.existsSync(ruta)) {
       // checar o Convertir a una ruta absoluta.
       // Convertimos la ruta relativa en absoluta
-      if (!pathIsAbsolute) {
-        const absolutePath = path.resolve(ruta);
-        console.log(absolutePath);
+      if (!pathIsAbsolute(ruta)) {
+        userPath = path.resolve(ruta);
+        console.log(userPath);
+      } else {
+        userPath = ruta;
       }
-      // Revisar si esa ruta absoluta tiene directorio.
+      // Es archivo?
+      var stats = fs.statSync(userPath);
+      if (stats.isFile()){
+      console.log("es un archivo?" + stats.isFile());
+      // Es un archivo .md?
 
 
 
-
-
+    }
     } else {
       // Si no existe la ruta rechaza la promesa.
       reject("¡ERROR! La ruta no existe");
     }
   });
 };
-console.log(process.argv);
