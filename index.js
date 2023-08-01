@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { pathIsAbsolute } from "./functions.js";
 import markdownLinkExtractor from "markdown-link-extractor";
+import chalk from "chalk";
 
 // ----------agregamos rutas--------------
 // SABER SI UN ARCHIVO EXISTE EN NODE.JS (Módulo FS por ejemplo)
@@ -17,27 +18,27 @@ export const mdLinks = (ruta, options) => {
       // resolve es para retornar algo.
       resolve("La ruta sí existe");
       // checar o Convertir a una ruta absoluta.
-      // Convertimos la ruta relativa en absoluta.
+      // ------------Convertimos la ruta relativa en absoluta.
       if (!pathIsAbsolute(ruta)) {
         userPath = path.resolve(ruta);
-        console.log(userPath);
+        console.log(chalk.magenta (userPath),1);
       } else {
         userPath = ruta;
       }
       // ---------Es archivo?
       var stats = fs.statSync(userPath);
       if (stats.isFile()) { // Extname
-        console.log("es un archivo? " + stats.isFile());
+        console.log("es un archivo? " + stats.isFile(),2);
         // ---------Es un archivo .md?
         if (path.extname(userPath) === ".md") {
-          console.log("es un archivo válido " + stats.isFile());
+          console.log("es un archivo válido " + stats.isFile(),3);
         const file = fs.readFile(userPath, "utf-8", (err, data) => {
           if (err) {
-            console.log("error: ", err);
+            console.log(chalk.bgGreen("error: ", err),4);
           } else {
-            // comenzanzar con extraccion de links
+            // ---------comenzar con extraccion de links
             const { links } = markdownLinkExtractor(data);
-            links.forEach(link => console.log(link));
+            links.forEach(link => console.log((link),5));
           }
         });
       }

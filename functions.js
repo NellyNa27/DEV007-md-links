@@ -11,3 +11,7 @@ export const pathIsAbsolute = (ruta) => {
 export const pathUser = (ruta) => {
   return path.isFile(ruta)
 }
+
+
+const route = process.argv[2];
+const isExists = routeExiste
