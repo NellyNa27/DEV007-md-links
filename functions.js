@@ -1,6 +1,6 @@
 import fs from 'fs'; // módulo fs
 import path from 'path';
-import chalk from 'chalk';
+// import chalk from 'chalk';
 
 
 // --------Función para ver si la ruta existe
