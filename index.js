@@ -28,12 +28,12 @@ export const mdLinks = (ruta, options) => {
       // ---------Es archivo?
       var stats = fs.statSync(userPath);
       if (stats.isFile()) {
-        console.log(chalk.blue("es un archivo? " + stats.isFile()), 2);
+        console.log(chalk.blue("es un archivo: " + stats.isFile()), 2);
         // ---------Es un archivo .md?
         // Extname
         if (path.extname(userPath) === ".md") {
-          console.log("es un archivo válido " + stats.isFile(), 3);
-          const stats = fs.readFile(userPath, "utf-8", (err, data) => {
+          console.log(chalk.green("es un archivo válido: " + stats.isFile()), 3);
+          const isFile = fs.readFile(userPath, "utf-8", (err, data) => {
             if (err) {
               console.log(chalk.bgGreen("error: ", err), 4);
             } else {
