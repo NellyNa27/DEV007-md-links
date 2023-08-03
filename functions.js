@@ -24,4 +24,3 @@ export const pathUser = (ruta) => {
 // ---------Función para Stats
 //export const optionStats = process.argv.includes('--stats');
 //console.log(optionStats,1.2);
-
