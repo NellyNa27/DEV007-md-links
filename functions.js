@@ -1,6 +1,6 @@
 import fs from 'fs'; // módulo fs
 import path from 'path';
-// import chalk from 'chalk';
+
 
 
 // --------Función para ver si la ruta existe
@@ -24,3 +24,4 @@ export const pathUser = (ruta) => {
 // ---------Función para Stats
 //export const optionStats = process.argv.includes('--stats');
 //console.log(optionStats,1.2);
+
