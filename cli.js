@@ -1,8 +1,8 @@
 import { mdLinks } from "./index.js";
 
 mdLinks("README.md")
-  .then((pathIsAbsolute) => {
-    console.log(pathIsAbsolute);
+  .then((rutaAbsoluta) => {
+    console.log(rutaAbsoluta);
   })
   .catch((error) => {
     console.error("Error:", error);
