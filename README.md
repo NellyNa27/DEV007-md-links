@@ -36,34 +36,21 @@ algunas estadísticas.
 
 ## 2. Resumen del proyecto
 
-En este proyecto crearás una herramienta de línea de comando (CLI) así como tu
-propia librería (o biblioteca - library) en JavaScript.
+En este proyecto  se creo una herramienta de línea de comandos (Cli), así como la librería en JavaScript, un programa que se ejecute usando Node.js
 
-En esta oportunidad nos alejamos un poco del navegador para construir un
-programa que se ejecute usando Node.js. Aprenderemos sobre procesos
-(`process.env`, `process.argv`, ...), cómo interactuar con el sistema archivos,
-cómo hacer consultas de red, etc.
 
 [Node.js](https://nodejs.org/es/) es un entorno de ejecución para JavaScript
 construido con el [motor de JavaScript V8 de Chrome](https://developers.google.com/v8/).
-Esto nos va a permitir ejecutar JavaScript en el entorno del sistema operativo,
-ya sea tu máquina o un servidor, lo cual nos abre las puertas para poder
+que nos permite ejecutar JavaScript en el entorno del sistema operativo,
+ya sea en máquina o un servidor, lo cual nos abre las puertas para poder
 interactuar con el sistema en sí, archivos, redes, etc.
 
-Diseñar tu propia librería es una experiencia fundamental para cualquier
-desarrolladora porque que te obliga a pensar en la interfaz (API) de tus
-_módulos_ y cómo será usado por otras developers. Debes tener especial
-consideración en peculiaridades del lenguaje, convenciones y buenas prácticas.
-
-## 3. Objetivos de aprendizaje
-
-Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en tu proyecto. Piensa en eso al decidir tu estrategia de trabajo.
-
+OBJETIVOS DE APRENDIZAJE:
 ### JavaScript
 
-- [ ] **Diferenciar entre tipos de datos primitivos y no primitivos**
+- [ X ] **Diferenciar entre tipos de datos primitivos y no primitivos**
 
-- [ ] **Arrays (arreglos)**
+- [ X ] **Arrays (arreglos)**
 
   <details><summary>Links</summary><p>
 
@@ -76,14 +63,14 @@ Reflexiona y luego marca los objetivos que has llegado a entender y aplicar en t
   * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
 </p></details>
 
-- [ ] **Objetos (key, value)**
+- [ X ] **Objetos (key, value)**
 
   <details><summary>Links</summary><p>
 
   * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/05-objects/01-objects)
 </p></details>
 
-- [ ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
+- [ X ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
 
   <details><summary>Links</summary><p>
 

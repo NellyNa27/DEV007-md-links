@@ -3,16 +3,17 @@ import path from 'path';
 
 
 
+
 // --------Función para ver si la ruta existe
 // const route = process.argv[2];
 // const isExists = routeExiste(ruta)
 
-// --------Función para ver si la ruta es absoluta
+// --------Función para ver si la ruta es absoluta-------------
 export const pathIsAbsolute = (ruta) => {
   return path.isAbsolute(ruta)
 }
 
-// ---------Funciòn para identificar si es archivo
+// ---------Funciòn para identificar si es archivo-----------------
 export const pathUser = (ruta) => {
   return path.isFile(ruta)
 }
