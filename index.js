@@ -6,6 +6,7 @@ import path from "path";
 import { pathIsAbsolute } from "./functions.js";
 import chalk from "chalk";
 import axios from "axios";
+import { get } from "http";
 
 // ----------agregamos rutas--------------
 // SABER SI UN ARCHIVO EXISTE EN NODE.JS (Módulo FS por ejemplo)
@@ -49,20 +50,24 @@ export const mdLinks = (ruta, options) => {
                   const file = userPath;
                   links.push({file, href, text});
               }
-              console.log((links),4);
 
-  const getLinks = [];
-  console.log(getLinks, 5);
-  getLinks.push (links);
-////
-  axios.get(links).then(function (response) {
-    console.log((response.status),9);
-    /* console.log(response.data);
-  console.log(response.statusText);
-  console.log(response.headers);
-  console.log(response.config);*/
-    // .then((response) => (this.info = response.data.api) });  } });
+              const getLinks = [];
+
+              links.forEach((link)  => {
+                //
+  axios.get(link.href).then(function (response) {
+    getLinks.push({...link, status: response.status, ok: response.status === 200 ? 'ok' : 'fail'})
+    console.log ((getLinks),4)
+  }).catch(err => {
+    getLinks.push({...link, status: 400, ok: 'fail'})
+
   });
+
+
+              })
+
+
+return
 
 
             }

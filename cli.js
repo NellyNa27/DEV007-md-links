@@ -1,7 +1,7 @@
 import chalk from "chalk";
 import { mdLinks } from "./index.js";
 
-mdLinks("README.md")
+mdLinks("prueba.md")
   .then((pathIsAbsolute) => {
     console.log((pathIsAbsolute),6);
   })
@@ -10,7 +10,7 @@ mdLinks("README.md")
   });
 
 
-  mdLinks("./PRUEBA")
+  /*mdLinks("./PRUEBA")
   .then((pathIsAbsolute) => {
     console.log((pathIsAbsolute),7);
   })
@@ -26,6 +26,6 @@ mdLinks("README.md")
   .catch((error) => {
     console.error((chalk.red("Error:", error)),8.1);
   });
-
+*/
 
 
