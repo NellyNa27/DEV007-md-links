@@ -464,15 +464,6 @@ si tienes dudas existenciales con respecto a estas decisiones. No existe una
   lines, y branches.
 * [ ] Pasa tests (y linters) (`npm test`).
 
-## 10. Achicando el problema
-
-Un "superpoder" que esperamos puedas desarrollar durante el bootcamp
-es el de definir "mini-proyectos" que te acerquen paso a paso a
-la solución del "gran proyecto". Es el equivalente a comenzar armando
-esquinas o bordes del rompecabezas/puzzle sin saber necesariamente
-cómo encajarán al final. Déjate llevar y explora.
-
-Estas son algunas sugerencias:
 
 ### Empieza con un diagrama de flujo
 
