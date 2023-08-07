@@ -34,8 +34,7 @@ export const mdLinks = (ruta, options) => {
         // Extname
         if (path.extname(userPath) === ".md") {
           console.log(
-            chalk.green("es un archivo válido: " + stats.isFile(),3)
-          );
+            chalk.green(("es un archivo válido: " + stats.isFile())),3);
           // ---------Extraemos links del archivo--------------------
           fs.readFile(userPath, "utf-8", (err, data) => {
             if (err) {
