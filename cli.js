@@ -3,10 +3,10 @@ import { mdLinks } from "./index.js";
 
 mdLinks("prueba.md")
   .then((pathIsAbsolute) => {
-    console.log((pathIsAbsolute),6);
+    console.log((pathIsAbsolute),4);
   })
   .catch((error) => {
-    console.error((chalk.red("Error:", error)),6.1);
+    console.error((chalk.red("Error:", error)),4.1);
   });
 
 
