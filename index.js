@@ -34,7 +34,9 @@ export const mdLinks = (ruta, options) => {
         // Extname
         if (path.extname(userPath) === ".md") {
           console.log(
-            chalk.green(("es un archivo válido: " + stats.isFile())), 3);
+            chalk.green("es un archivo válido: " + stats.isFile()),
+            3
+          );
           // ---------Extraemos links del archivo--------------------
           fs.readFile(userPath, "utf-8", (err, data) => {
             if (err) {
@@ -68,20 +70,28 @@ export const mdLinks = (ruta, options) => {
               Promise.all(axiosPromises)
                 .then((results) => {
                   const getLinks = results;
-                  console.log(getLinks);
+                  console.log(getLinks, 5);
                   // -----------------Iniciamos con stats------------------
-
-
-
-
-
-
+                  let totalLinks = 0;
+                  getLinks.forEach((link) => {
+                    if (link) {
+                      totalLinks++;
+                    }
+                    console.log(`Links totales: ${totalLinks}`, 6.1);
+                  });
+                  let brokenLinks = 0;
+                  getLinks.forEach((link) => {
+                    if (link.ok === "fail") {
+                      brokenLinks++;
+                    }
+                    console.log(`Links rotos: ${brokenLinks}`, 6.2);
+                  });
+                  console.log("Total:", totalLinks, "Broken:", brokenLinks);
                 })
                 .catch((err) => {
                   console.error(err);
                 });
-
-              return
+              return;
             }
           });
         }
