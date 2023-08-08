@@ -34,7 +34,7 @@ export const mdLinks = (ruta, options) => {
         // Extname
         if (path.extname(userPath) === ".md") {
           console.log(
-            chalk.green(("es un archivo válido: " + stats.isFile())),3);
+            chalk.green(("es un archivo válido: " + stats.isFile())), 3);
           // ---------Extraemos links del archivo--------------------
           fs.readFile(userPath, "utf-8", (err, data) => {
             if (err) {
@@ -44,40 +44,29 @@ export const mdLinks = (ruta, options) => {
               const links = [];
               let match;
               while ((match = regex.exec(data)) !== null) {
-                  const text = match[1].slice(0,50);
-                  const href = match[2];
-                  const file = userPath;
-                  links.push({file, href, text});
+                const text = match[1].slice(0, 50);
+                const href = match[2];
+                const file = userPath;
+                links.push({ file, href, text });
               }
-
+              // -------------iniciamos con la validación de Options------------
               const getLinks = [];
-
-              links.forEach((link)  => {
-                //
-  axios.get(link.href).then(function (response) {
-    getLinks.push({...link, status: response.status, ok: response.status === 200 ? 'ok' : 'fail'})
-    console.log ((getLinks),4)
-  }).catch(err => {
-    getLinks.push({...link, status: 400, ok: 'fail'})
-
-  });
-
-
+              links.forEach((link) => {
+                axios.get(link.href).then(function (response) {
+                  getLinks.push({ ...link, status: response.status, ok: response.status === 200 ? 'ok' : 'fail' })
+                  console.log((getLinks), 5)
+                }).catch(err => {
+                  getLinks.push({ ...link, status: 400, ok: 'fail' })
+                });
               })
-
-
-return
-
-
+              return
             }
           });
+        }
       }
-  }
-
-
-            //if (!optionsStats && ! optionsValidate){
-          //link.forEach((link) => {
-          //console.log(result+ " " + link.href + " " + link.text)
+      //if (!optionsStats && ! optionsValidate){
+      //link.forEach((link) => {
+      //console.log(result+ " " + link.href + " " + link.text)
     } else {
       // Si no existe la ruta rechaza la promesa.
       reject("¡ERROR! La ruta no existe");
