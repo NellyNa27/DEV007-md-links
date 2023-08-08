@@ -49,16 +49,38 @@ export const mdLinks = (ruta, options) => {
                 const file = userPath;
                 links.push({ file, href, text });
               }
-              // -------------iniciamos con la validación de Options------------
-              const getLinks = [];
-              links.forEach((link) => {
-                axios.get(link.href).then(function (response) {
-                  getLinks.push({ ...link, status: response.status, ok: response.status === 200 ? 'ok' : 'fail' })
-                  console.log((getLinks), 5)
-                }).catch(err => {
-                  getLinks.push({ ...link, status: 400, ok: 'fail' })
+              // -------------iniciamos con la validación de Options-----------
+              const axiosPromises = links.map((link) => {
+                return axios
+                  .get(link.href)
+                  .then(function (response) {
+                    return {
+                      ...link,
+                      status: response.status,
+                      ok: response.status === 200 ? "ok" : "fail",
+                    };
+                  })
+                  .catch(() => {
+                    return { ...link, status: 400, ok: "fail" };
+                  });
+              });
+              // ------------se define una variable de links y se imprime en la promesa-------
+              Promise.all(axiosPromises)
+                .then((results) => {
+                  const getLinks = results;
+                  console.log(getLinks);
+                  // -----------------Iniciamos con stats------------------
+
+
+
+
+
+
+                })
+                .catch((err) => {
+                  console.error(err);
                 });
-              })
+
               return
             }
           });
