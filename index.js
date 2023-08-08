@@ -64,9 +64,6 @@ export const mdLinks = (ruta, options) => {
           });
         }
       }
-      //if (!optionsStats && ! optionsValidate){
-      //link.forEach((link) => {
-      //console.log(result+ " " + link.href + " " + link.text)
     } else {
       // Si no existe la ruta rechaza la promesa.
       reject("¡ERROR! La ruta no existe");
