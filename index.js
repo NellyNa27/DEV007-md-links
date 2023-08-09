@@ -7,6 +7,8 @@ import { pathIsAbsolute } from "./functions.js";
 import chalk from "chalk";
 import axios from "axios";
 import { get } from "http";
+import  colors from "colors";
+
 
 // ----------agregamos rutas--------------
 // SABER SI UN ARCHIVO EXISTE EN NODE.JS (Módulo FS por ejemplo)
@@ -71,22 +73,41 @@ export const mdLinks = (ruta, options) => {
                 .then((results) => {
                   const getLinks = results;
                   console.log(getLinks, 5);
+                  // console.table(getLinks);
                   // -----------------Iniciamos con stats------------------
                   let totalLinks = 0;
                   getLinks.forEach((link) => {
                     if (link) {
                       totalLinks++;
                     }
-                    console.log(`Links totales: ${totalLinks}`, 6.1);
+                    // console.log(`Links totales: ${totalLinks}`, 6.1);
+                    // Links totales
                   });
                   let brokenLinks = 0;
                   getLinks.forEach((link) => {
                     if (link.ok === "fail") {
                       brokenLinks++;
                     }
-                    console.log(`Links rotos: ${brokenLinks}`, 6.2);
+                    // console.log(`Links rotos: ${brokenLinks}`, 6.2);
+                    // Links rotos
                   });
-                  console.log("Total:", totalLinks, "Broken:", brokenLinks);
+                  let uniqueLinks = 0;
+                  getLinks.forEach((link) => {
+                    if (link) {
+                      uniqueLinks++;
+                    }
+                  });
+
+                    console.log({
+                      Total: totalLinks,
+                      Unique: uniqueLinks,
+                      Broken: brokenLinks,
+                    });
+                  console.table({
+                    Total: totalLinks,
+                    Unique: uniqueLinks,
+                    Broken: brokenLinks,
+                  });
                 })
                 .catch((err) => {
                   console.error(err);
