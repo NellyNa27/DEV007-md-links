@@ -6,8 +6,7 @@ import path from "path";
 import { pathIsAbsolute } from "./functions.js";
 import chalk from "chalk";
 import axios from "axios";
-import { get } from "http";
-import  colors from "colors";
+// import  colors from "colors";
 
 
 // ----------agregamos rutas--------------
@@ -36,7 +35,7 @@ export const mdLinks = (ruta, options) => {
         // Extname
         if (path.extname(userPath) === ".md") {
           console.log(
-            chalk.green("es un archivo válido: " + stats.isFile()),
+            chalk.green("es un archivo tipo .md: " + stats.isFile()),
             3
           );
           // ---------Extraemos links del archivo--------------------
@@ -97,7 +96,6 @@ export const mdLinks = (ruta, options) => {
                       uniqueLinks++;
                     }
                   });
-
                     console.log({
                       Total: totalLinks,
                       Unique: uniqueLinks,
