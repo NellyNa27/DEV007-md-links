@@ -1,6 +1,29 @@
-import chalk from "chalk";
+// import chalk from "chalk";
 import { mdLinks } from "./index.js";
 
+
+// console.log(process.argv);
+
+const optionsObjects = {validate: false, stats: false};
+
+if (process.argv.includes("--validate")){
+  optionsObjects.validate = true;
+}
+if(process.argv.includes("--stats")){
+  optionsObjects.stats = true;
+}
+
+
+mdLinks(process.argv[2], optionsObjects)
+.then((results)=> {
+  console.log(results);
+})
+.catch((error)=> {
+  console.log(("error"));
+});
+
+
+/*
 mdLinks("prueba.md")
   .then((pathIsAbsolute) => {
     console.log((pathIsAbsolute),4);
@@ -9,23 +32,6 @@ mdLinks("prueba.md")
     console.error((chalk.red("Error:", error)),4.1);
   });
 
-
-  /*mdLinks("./PRUEBA")
-  .then((pathIsAbsolute) => {
-    console.log((pathIsAbsolute),7);
-  })
-  .catch((error) => {
-    console.error((chalk.red("Error:", error)),7.1);
-  });
-
-
-  mdLinks("./PRUEBAA")
-  .then((pathIsAbsolute) => {
-    console.log((pathIsAbsolute),8);
-  })
-  .catch((error) => {
-    console.error((chalk.red("Error:", error)),8.1);
-  });
 */
 
 

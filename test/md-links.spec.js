@@ -69,13 +69,13 @@ describe("fileExtname", () => {
     it("return a string", () => {
     expect(typeof fileExtname("README.md")).toBe("string");
     });
-    it("return md extension", () => {
+    it("return .md extension", () => {
       expect(fileExtname("README.md")).toBe(".md");
   });
-    it("return js extension", () => {
+    it("return extension", () => {
       expect(fileExtname("functions.js")).toBe(".js");
   });
-    it("return empty string", () => {
+    it("return string", () => {
       expect(fileExtname("/test")).toBe("");
   });
   });

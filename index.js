@@ -6,6 +6,7 @@ import path from "path";
 import { pathIsAbsolute } from "./functions.js";
 import chalk from "chalk";
 import axios from "axios";
+
 // import  colors from "colors";
 
 
@@ -52,6 +53,10 @@ export const mdLinks = (ruta, options) => {
                 const file = userPath;
                 links.push({ file, href, text });
               }
+              if (!options.validate && !options.stats){
+                console.log(links);
+                return
+              }
               // -------------iniciamos con la validación de Options-----------
               const axiosPromises = links.map((link) => {
                 return axios
@@ -60,7 +65,7 @@ export const mdLinks = (ruta, options) => {
                     return {
                       ...link,
                       status: response.status,
-                      ok: response.status === 200 ? "ok" : "fail",
+                      ok: response.status === 200 ? "ok✔" : "fail",
                     };
                   })
                   .catch(() => {
@@ -71,7 +76,9 @@ export const mdLinks = (ruta, options) => {
               Promise.all(axiosPromises)
                 .then((results) => {
                   const getLinks = results;
-                  console.log(getLinks, 5);
+                  if (options.validate && !options.stats){
+                    console.log(options, 88);
+                }
                   // console.table(getLinks);
                   // -----------------Iniciamos con stats------------------
                   let totalLinks = 0;
@@ -90,22 +97,28 @@ export const mdLinks = (ruta, options) => {
                     // console.log(`Links rotos: ${brokenLinks}`, 6.2);
                     // Links rotos
                   });
-                  let uniqueLinks = 0;
+                  // Que no se repitan
+                  /*let uniqueLinks = 0;
                   getLinks.forEach((link) => {
                     if (link) {
                       uniqueLinks++;
                     }
+                  });*/
+                  const uniqueLinks = new Set(getLinks.map((link) => link.href)).size
+                  console.log(getLinks);
+                  if (!options.validate && options.stats){
+                    console.table({
+                    Total: totalLinks,
+                    Unique: uniqueLinks,
                   });
-                    console.log({
-                      Total: totalLinks,
-                      Unique: uniqueLinks,
-                      Broken: brokenLinks,
-                    });
-                  console.table({
+                }
+                  if (options.validate && options.stats){
+                    console.table({
                     Total: totalLinks,
                     Unique: uniqueLinks,
                     Broken: brokenLinks,
                   });
+                }
                 })
                 .catch((err) => {
                   console.error(err);
