@@ -1,15 +1,10 @@
-import fs from 'fs'; // módulo fs
-import path from 'path';
-
+import fs from "fs"; // módulo fs
+import path from "path";
 
 // --------La ruta existe?-------
 export const routeExist = (ruta) => {
   return fs.existsSync(ruta);
 };
-// --------Función para ver si la ruta existe
-// const route = process.argv[2];
-// const routeExists = routeExiste(ruta)
-
 // --------Función para ver si la ruta es absoluta-------------
 export const pathIsAbsolute = (ruta) => {
   return path.isAbsolute(ruta);
@@ -33,11 +28,11 @@ export const readingFile = (ruta) => {
   fs.readFile(ruta, "utf-8");
 };
 
-// ---------Función para Validate
-//export const optionValidate = process.argv.includes('--validate');
-//console.log(optionValidate,1.1);
+/* ---------Función para Validate
+export const optionValidate = process.argv.includes('--validate');
+console.log(optionValidate,1.1);
 
-// ---------Función para Stats
-//export const optionStats = process.argv.includes('--stats');
-//console.log(optionStats,1.2);
-
+---------Función para Stats
+export const optionStats = process.argv.includes('--stats');
+console.log(optionStats,1.2);
+*/
