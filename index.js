@@ -7,15 +7,12 @@ import { pathIsAbsolute } from "./functions.js";
 import chalk from "chalk";
 import axios from "axios";
 
-// import  colors from "colors";
-
-
 // ----------agregamos rutas--------------
-// SABER SI UN ARCHIVO EXISTE EN NODE.JS (Módulo FS por ejemplo)
+// SABER SI UN ARCHIVO EXISTE EN NODE.JS (Módulo FS)
 export const mdLinks = (ruta, options) => {
   return new Promise((resolve, reject) => {
     let userPath;
-    // resolve (son callback, son funciones): es cuando se resuelve la promesa-then, reject: es rechazada la promesa-catch
+    // resolve (callback, son funciones): Cuando se resuelve la promesa-then, reject: es rechazada la promesa-catch
     // -----------la ruta existe------------
     if (fs.existsSync(ruta)) {
       // resolve es para retornar algo.--------
@@ -33,7 +30,7 @@ export const mdLinks = (ruta, options) => {
       if (stats.isFile()) {
         console.log(chalk.blue("es un archivo: " + stats.isFile()), 2);
         // ---------Es un archivo .md?-----------
-        // Extname
+        // ---------Extname
         if (path.extname(userPath) === ".md") {
           console.log(
             chalk.green("es un archivo tipo .md: " + stats.isFile()),
@@ -53,9 +50,9 @@ export const mdLinks = (ruta, options) => {
                 const file = userPath;
                 links.push({ file, href, text });
               }
-              if (!options.validate && !options.stats){
+              if (!options.validate && !options.stats) {
                 console.log(links);
-                return
+                return;
               }
               // -------------iniciamos con la validación de Options-----------
               const axiosPromises = links.map((link) => {
@@ -76,9 +73,9 @@ export const mdLinks = (ruta, options) => {
               Promise.all(axiosPromises)
                 .then((results) => {
                   const getLinks = results;
-                  if (options.validate && !options.stats){
+                  if (options.validate && !options.stats) {
                     console.log(options, 88);
-                }
+                  }
                   // console.table(getLinks);
                   // -----------------Iniciamos con stats------------------
                   let totalLinks = 0;
@@ -97,28 +94,29 @@ export const mdLinks = (ruta, options) => {
                     // console.log(`Links rotos: ${brokenLinks}`, 6.2);
                     // Links rotos
                   });
-                  // Que no se repitan
+                  // -------------------Mostrar Links que únicos--------------
                   /*let uniqueLinks = 0;
                   getLinks.forEach((link) => {
                     if (link) {
                       uniqueLinks++;
                     }
                   });*/
-                  const uniqueLinks = new Set(getLinks.map((link) => link.href)).size
+                  const uniqueLinks = new Set(getLinks.map((link) => link.href))
+                    .size;
                   console.log(getLinks);
-                  if (!options.validate && options.stats){
+                  if (!options.validate && options.stats) {
                     console.table({
-                    Total: totalLinks,
-                    Unique: uniqueLinks,
-                  });
-                }
-                  if (options.validate && options.stats){
+                      Total: totalLinks,
+                      Unique: uniqueLinks,
+                    });
+                  }
+                  if (options.validate && options.stats) {
                     console.table({
-                    Total: totalLinks,
-                    Unique: uniqueLinks,
-                    Broken: brokenLinks,
-                  });
-                }
+                      Total: totalLinks,
+                      Unique: uniqueLinks,
+                      Broken: brokenLinks,
+                    });
+                  }
                 })
                 .catch((err) => {
                   console.error(err);

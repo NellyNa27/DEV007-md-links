@@ -1,27 +1,22 @@
-// import chalk from "chalk";
 import { mdLinks } from "./index.js";
 
 
-// console.log(process.argv);
+const optionsObjects = { validate: false, stats: false };
 
-const optionsObjects = {validate: false, stats: false};
-
-if (process.argv.includes("--validate")){
+if (process.argv.includes("--validate")) {
   optionsObjects.validate = true;
 }
-if(process.argv.includes("--stats")){
+if (process.argv.includes("--stats")) {
   optionsObjects.stats = true;
 }
 
-
 mdLinks(process.argv[2], optionsObjects)
-.then((results)=> {
-  console.log(results);
-})
-.catch((error)=> {
-  console.log(("error"));
-});
-
+  .then((results) => {
+    console.log(results);
+  })
+  .catch((error) => {
+    console.log("error");
+  });
 
 /*
 mdLinks("prueba.md")
@@ -31,7 +26,4 @@ mdLinks("prueba.md")
   .catch((error) => {
     console.error((chalk.red("Error:", error)),4.1);
   });
-
 */
-
-
