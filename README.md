@@ -15,6 +15,8 @@
 ***
 ## 1. Preámbulo
 
+![md-links](./PRUEBA/PortadaMD.png)
+
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
 ligero muy popular entre developers. Es usado en muchísimas plataformas que
 manejan texto plano (GitHub, foros, blogs, ...) y es muy común
@@ -30,7 +32,7 @@ herramienta usando [Node.js](https://nodejs.org/), que lea y analice archivos
 en formato `Markdown`, para verificar los links que contengan y reportar
 algunas estadísticas.
 
-![md-links](./PRUEBA/Img2.png)
+
 
 ## 2. Resumen del proyecto
 
@@ -44,58 +46,8 @@ ya sea en máquina o un servidor, lo cual nos abre las puertas para poder
 interactuar con el sistema en sí, archivos, redes, etc.
 
 ## 3. OBJETIVOS DE APRENDIZAJE:
-#### JavaScript
 
-- [ X ] **Diferenciar entre tipos de datos primitivos y no primitivos**
-- [ X ] **Arrays (arreglos)**
-  <details><summary>Links</summary><p>
-  * [Arreglos](https://curriculum.laboratoria.la/es/topics/javascript/04-arrays)
-  * [Array - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/)
-  * [Array.prototype.sort() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
-  * [Array.prototype.forEach() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)
-  * [Array.prototype.map() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/map)
-  * [Array.prototype.filter() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
-  * [Array.prototype.reduce() - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce)
-</p></details>
-- [ X ] **Objetos (key, value)**
-  <details><summary>Links</summary><p>
-  * [Objetos en JavaScript](https://curriculum.laboratoria.la/es/topics/javascript/05-objects/01-objects)
-</p></details>
-- [ X ] **Uso de condicionales (if-else, switch, operador ternario, lógica booleana)**
-  <details><summary>Links</summary><p>
-  * [Estructuras condicionales y repetitivas](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/01-conditionals-and-loops)
-  * [Tomando decisiones en tu código — condicionales - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/conditionals)
-</p></details>
-- [ X ] **Funciones (params, args, return)**
-  <details><summary>Links</summary><p>
-  * [Funciones (control de flujo)](https://curriculum.laboratoria.la/es/topics/javascript/02-flow-control/03-functions)
-  * [Funciones clásicas](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/01-classic)
-  * [Arrow Functions](https://curriculum.laboratoria.la/es/topics/javascript/03-functions/02-arrow)
-  * [Funciones — bloques de código reutilizables - MDN](https://developer.mozilla.org/es/docs/Learn/JavaScript/Building_blocks/Functions)
-</p></details>
-- [ X ] **Módulos de CommonJS**
-  <details><summary>Links</summary><p>
-  * [Modules: CommonJS modules - Node.js Docs](https://nodejs.org/docs/latest/api/modules.html)
-</p></details>
-- [ X ] **Diferenciar entre expresiones (expressions) y sentencias (statements)**
-- [ X ] **Callbacks**
-  <details><summary>Links</summary><p>
-  * [Función Callback - MDN](https://developer.mozilla.org/es/docs/Glossary/Callback_function)
-</p></details>
-- [ X ] **Promesas**
-  <details><summary>Links</summary><p>
-  * [Promise - MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Promise)
-  * [How to Write a JavaScript Promise - freecodecamp (en inglés)](https://www.freecodecamp.org/news/how-to-write-a-javascript-promise-4ed8d44292b8/)
-</p></details>
-- [ X ] **Pruebas unitarias (unit tests)**
-  <details><summary>Links</summary><p>
-  * [Empezando con Jest - Documentación oficial](https://jestjs.io/docs/es-ES/getting-started)
-</p></details>
-- [ X ] **Pruebas de compatibilidad en múltiples entornos de ejecución**
-- [ X ] **Uso de linter (ESLINT)**
-- [ X ] **Uso de identificadores descriptivos (Nomenclatura y Semántica)**
-
-#### Node.js
+## Node.js
 - [ X ] **Instalar y usar módulos con npm**
   <details><summary>Links</summary><p>
   * [Sitio oficial de npm (en inglés)](https://www.npmjs.com/)
@@ -118,14 +70,6 @@ interactuar con el sistema en sí, archivos, redes, etc.
   * [Path - Documentación oficial (en inglés)](https://nodejs.org/api/path.html)
 </p></details>
 
-## Control de Versiones (Git y GitHub)
-
-- [ X ] **Git: Instalación y configuración**
-- [ X ] **Git: Control de versiones con git (init, clone, add, commit, status, push, pull, remote)**
-- [ X ] **Git: Integración de cambios entre ramas (branch, checkout, fetch, merge, reset, rebase, tag)**
-- [ X ] **GitHub: Creación de cuenta y repos, configuración de llaves SSH**
-- [ X ] **GitHub: Colaboración en Github (branches | forks | pull requests | code review | tags)**
-- [ X ] **GitHub: Organización en Github (projects | issues | labels | milestones | releases)**
 ## HTTP
 
 - [ X ] **Consulta o petición (request) y respuesta (response).**
@@ -151,18 +95,10 @@ interactuar con el sistema en sí, archivos, redes, etc.
 * Los **tests unitarios** deben cubren un mínimo del 70% de _statements_,
   _functions_, _lines_ y _branches_.
 
-* No se utiliza `async/await`.
 
 * Para este proyecto se establece el uso de ES Modules `(import/export)`.
 
-## 5. Criterios de aceptación mínimos del proyecto
-
-Para comenzar este proyecto se hace un  **_fork_** y **_clonar_** repositorio.
-
-Antes de comenzar a codear, se hace un  **plan de acción**. para priorizar y organizar el trabajo y poder hacer
-seguimiento del progreso, en Trello.
-
-### Archivos del proyecto
+## 5. Archivos del proyecto
 
 * `README.md` con descripción del módulo, instrucciones de instalación/uso,
   documentación del API y ejemplos. Todo lo relevante para que cualquier
