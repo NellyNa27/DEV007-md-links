@@ -15,7 +15,7 @@
 ***
 ## 1. Preámbulo
 
-![md-links](./PRUEBA/PortadaMD.png)
+![md-links](./img/PortadaMD.png)
 
 [Markdown](https://es.wikipedia.org/wiki/Markdown) es un lenguaje de marcado
 ligero muy popular entre developers. Es usado en muchísimas plataformas que
@@ -115,7 +115,7 @@ interactuar con el sistema en sí, archivos, redes, etc.
 * `test/md-links.spec.js` contiene los tests unitarios para la función
   `mdLinks()`.
 
-![md-links](./PRUEBA/Img6.png)
+![md-links](./img/Img6.png)
 
 El módulo debe poder **importarse** en otros scripts de Node.js y debe ofrecer la
 siguiente interfaz:
@@ -135,7 +135,7 @@ Si la ruta pasada es relativa, debe resolverse como relativa.
 La función debe **retornar una promesa** (`Promise`) que **resuelve a un arreglo**
 (`Array`) de objetos (`Object`), donde cada objeto representa un link y contiene
 las siguientes propiedades.
-![md-links](./PRUEBA/Img7.png)
+![md-links](./img/Img7.png)
 
 Con `validate:false` :
 
@@ -143,7 +143,7 @@ Con `validate:false` :
 * `text`: Texto que aparecía dentro del link (`<a>`).
 * `file`: Ruta del archivo donde se encontró el link.
 
-![md-links](./PRUEBA/Img8.png)
+![md-links](./img/Img8.png)
 
 Con `validate:true` :
 
@@ -152,7 +152,7 @@ Con `validate:true` :
 * `file`: Ruta del archivo donde se encontró el link.
 * `status`: Código de respuesta HTTP.
 * `ok`: Mensaje `fail` en caso de fallo u `ok` en caso de éxito.
-![md-links](./PRUEBA/Img9.png)
+![md-links](./img/Img9.png)
 #### Ejemplo
 
 ```js
@@ -183,7 +183,7 @@ Link de película [cinemark movie](https://www.cinemark.cl/pelicula?corporate_fi
 Link roto [broken](https://www.cinemark.ccl/)
 
 ```
-![md-links](./PRUEBA/Img1.png)
+![md-links](./img/Img1.png)
 
 
 El comportamiento por defecto debe identificar el archivo markdown (a partir de la ruta que recibe como
@@ -194,15 +194,15 @@ que hay dentro del link .
 ## 6.- Diagrama de flujo
 Para visualizar las tareas y objetivos, se llevó a cabo un `diagrama de flujo`.
 
-![md-links](./PRUEBA/Img3.png)
+![md-links](./img/Img3.png)
 
 Seguido de un `pseudocódigo` (representados por comentarios dentro del código)
 
-![md-links](./PRUEBA/Img4.png)
+![md-links](./img/Img4.png)
 ## 7.- Planificación
 
 En este proyecto para su planificación, tareas y objetivos utilizamos la herramienta de planificación Trello de primera instancia y utilizamos la herramienta de organización de GitHub llamada **Github Projects**, tambien para familiarizarse con ella.
-![md-links](./PRUEBA/Img5.png)
+![md-links](./img/Img5.png)
 ## 8.-Antes de codear
 
 - Nos aseguramos de comprender el proyecto.
@@ -229,19 +229,19 @@ Por ejemplo:
 Vemos que el _output_ en este caso incluye la palabra `ok` o `fail` después de
 la URL, así como el status de la respuesta recibida a la petición HTTP a dicha
 URL.
-![md-links](./PRUEBA/Img9.png)
+![md-links](./img/Img9.png)
 
 ##### `--stats`
 
 Si pasamos la opción `--stats` el output (salida) será un texto con estadísticas
 básicas sobre los links.
 
-![md-links](./PRUEBA/Img10.png)
+![md-links](./img/Img10.png)
 
 También podemos combinar `--stats` y `--validate` para obtener estadísticas que
 necesiten de los resultados de la validación.
 
-![md-links](./PRUEBA/Img11.png)
+![md-links](./img/Img11.png)
 
 ## 10.-Implementación
 
@@ -252,7 +252,7 @@ hacer consultas HTTP
 * Se utilizó:
   [expresiones regulares (`RegExp`)](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions).
 
-![md-links](./PRUEBA/Img12.png)
+![md-links](./img/Img12.png)
 
 ## 11.-Checklist
 
@@ -279,4 +279,4 @@ hacer consultas HTTP
   lines, y branches.
 * [ X ] Pasa tests (y linters) (`npm test`).
 
-![md-links](./PRUEBA/Img13.png)
+![md-links](./img/Img13.png)
